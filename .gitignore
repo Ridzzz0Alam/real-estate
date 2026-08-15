@@ -1,0 +1,471 @@
+# ============================================================================
+# Enterprise .gitignore
+# Comprehensive template for multi-language, multi-platform enterprise projects
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Operating System Files
+# ----------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.nfs*
+
+# ----------------------------------------------------------------------------
+# IDEs and Editors
+# ----------------------------------------------------------------------------
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+# JetBrains (IntelliJ, PyCharm, WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# Xcode
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+# ----------------------------------------------------------------------------
+# Dependency Directories
+# ----------------------------------------------------------------------------
+
+node_modules/
+jspm_packages/
+bower_components/
+vendor/
+
+# ----------------------------------------------------------------------------
+# Build Outputs & Artifacts
+# ----------------------------------------------------------------------------
+
+# General
+build/
+dist/
+target/
+out/
+*.exe
+*.dll
+*.so
+*.dylib
+*.app
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# .NET
+bin/
+obj/
+[Bb]uild[Ll]og.*
+
+# Go
+*.o
+*.a
+*.test
+*.out
+
+# Rust
+cargo.lock
+/target/
+
+# C / C++
+*.o
+*.obj
+*.elf
+*.ilk
+*.map
+*.exp
+*.gch
+*.pch
+*.lib
+*.a
+*.la
+*.lo
+*.so.*
+
+# ----------------------------------------------------------------------------
+# Logs, Databases, and Temporary Files
+# ----------------------------------------------------------------------------
+
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Log directories
+logs/
+log/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.cache
+*.pid
+*.seed
+*.pid.lock
+
+# ----------------------------------------------------------------------------
+# Environment and Configuration Files
+# ----------------------------------------------------------------------------
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+secrets.*
+credentials/
+credentials.*
+*.keystore
+*.jks
+
+# AWS
+.aws/
+
+# Azure
+.azure/
+
+# GCP
+.gcp/
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# ----------------------------------------------------------------------------
+# Language-Specific
+# ----------------------------------------------------------------------------
+
+# Node.js / JavaScript / TypeScript
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+*.egg-info/
+dist/
+build/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# Ruby
+*.gem
+.bundle/
+vendor/bundle
+.rvmrc
+
+# PHP
+composer.phar
+/vendor/
+
+# Swift / Objective-C
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+
+# Dart / Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# ----------------------------------------------------------------------------
+# Testing and Coverage
+# ----------------------------------------------------------------------------
+
+coverage/
+.nyc_output/
+*.lcov
+htmlcov/
+.tox/
+.nox/
+
+# ----------------------------------------------------------------------------
+# Package Managers
+# ----------------------------------------------------------------------------
+
+# npm / yarn (lockfiles can be debated; included here for flexibility)
+# Uncomment if your org prefers not to commit lockfiles
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Composer
+composer.lock
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ----------------------------------------------------------------------------
+# Docker
+# ----------------------------------------------------------------------------
+
+# Docker Compose override files (often contain local env vars)
+docker-compose.override.yml
+docker-compose.*.yml
+!docker-compose.yml
+
+# ----------------------------------------------------------------------------
+# Infrastructure as Code
+# ----------------------------------------------------------------------------
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ansible
+*.retry
+
+# Pulumi
+*.pulumi/
+
+# ----------------------------------------------------------------------------
+# Documentation
+# ----------------------------------------------------------------------------
+
+# Generated docs
+docs/_build/
+site/
+
+# ----------------------------------------------------------------------------
+# Archives and Compressed Files
+# ----------------------------------------------------------------------------
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.bz2
+
+# ----------------------------------------------------------------------------
+# Miscellaneous
+# ----------------------------------------------------------------------------
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.save
+
+# Patch files
+*.patch
+*.diff
+
+# Core dumps
+core
+core.*
+
+# Storybook
+storybook-static/
+
+# Next.js
+.next/
+out/
+
+# Nuxt.js
+.nuxt/
+dist/
+
+# Gatsby
+.cache/
+public/
+
+# VuePress
+.vuepress/dist
+
+# Serverless
+.serverless/
+
+# FuseBox
+.fusebox/
+
+# DynamoDB Local
+.dynamodb/
+
+# TernJS
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ----------------------------------------------------------------------------
+# Project-Specific (Add your project-specific ignores below)
+# ----------------------------------------------------------------------------
+
