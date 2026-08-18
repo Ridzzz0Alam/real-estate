@@ -1,27 +1,26 @@
-import React from 'react';
-import { Amplify } from 'aws-amplify';
+import React from "react";
+import { Amplify } from "aws-amplify";
 
-import { Authenticator } from '@aws-amplify/ui-react';
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
 
-
-
-Amplify.configure(
+Amplify.configure({
   Auth: {
-    Congnito: {
-      
-    }
-  }
-);
+    Cognito: {
+      userPoolId: process.env.NEXT_PUBLIC_AWS_COGNITO_USER_POOL_ID!,
+      userPoolClientId:
+        process.env.NEXT_PUBLIC_AWS_COGNITO_USER_POOL_CLIENT_ID!,
+    },
+  },
+});
 
-export default function App() {
+const Auth = ({ children }: { children: React.ReactNode }) => {
+  const { user } = useAuthenticator((context) => [context.user]);
+
   return (
-    <Authenticator>
-      {({ signOut, user }) => (
-        <main>
-          <h1>Hello {user.username}</h1>
-          <button onClick={signOut}>Sign out</button>
-        </main>
-      )}
-    </Authenticator>
+    <div className="h-full">
+      <Authenticator>{() => <>{children}</>}</Authenticator>
+    </div>
   );
-}
+};
+
+export default Authenticator;
