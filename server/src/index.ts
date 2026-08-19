@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { authMiddleware } from "./middleware/authMiddleware.js";
 import tenantRoutes from "./routes/tenantRoutes.js";
+import managerRoutes from "./routes/tenantRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
+app.use("/tenants", authMiddleware(["manager"]), managerRoutes);
 
 /* SERVER */
 const port = process.env.PORT || 3002;
