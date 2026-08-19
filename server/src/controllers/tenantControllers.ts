@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { wktToGeoJSON } from "@terraformer/wkt";
 
@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 export const getTenant = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { cognitoId } = req.params;
+    const cognitoId = req.params.cognitoId as string;
     const tenant = await prisma.tenant.findUnique({
       where: { cognitoId },
       include: {
