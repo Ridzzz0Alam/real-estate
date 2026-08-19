@@ -1,4 +1,8 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  createApi,
+  fetchBaseQuery,
+  FetchBaseQueryError,
+} from "@reduxjs/toolkit/query/react";
 import { fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
 import { createNewUserInDatabase } from "@/lib/utils";
 import { Tenant, Manager } from "@/types/prismaTypes";
@@ -53,8 +57,17 @@ export const api = createApi({
               userRole,
             },
           };
-        } catch (error: any) {
-          return { error: error.message || "Could not fetch user data" };
+        } catch (error: unknown) {
+          const message =
+            error instanceof Error
+              ? error.message
+              : "Could not fetch user data";
+          return {
+            error: {
+              status: "CUSTOM_ERROR",
+              error: message,
+            } as FetchBaseQueryError,
+          };
         }
       },
     }),
